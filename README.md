@@ -1,16 +1,24 @@
 # Archivo de la Compañía Harford
 
-Sitio estático preparado para publicación provisional en GitHub Pages.
+Sitio estático preparado para GitHub Pages. No requiere base de datos ni compilación.
 
-## Publicación
+## Publicación provisional en GitHub Pages
 
-1. Crea un repositorio público en GitHub, por ejemplo `harford`.
-2. Sube **el contenido de esta carpeta** a la raíz de la rama `main`.
-3. En `Settings → Pages`, selecciona `Deploy from a branch`, rama `main` y carpeta `/ (root)`.
-4. La dirección tendrá este formato: `https://USUARIO.github.io/harford/`.
+1. Crea un repositorio público, por ejemplo `harford`.
+2. Descomprime este paquete y sube **su contenido** a la raíz del repositorio.
+3. Abre `Settings` → `Pages`.
+4. Selecciona `Deploy from a branch`, rama `main` y carpeta `/ (root)`.
+5. La dirección será similar a `https://USUARIO.github.io/harford/`.
 
-Todas las rutas internas son relativas. No es necesario modificar enlaces, hojas de estilo, scripts ni imágenes para publicar la web dentro de un repositorio de proyecto. El archivo `.nojekyll` evita que GitHub Pages procese innecesariamente la carpeta como un proyecto Jekyll.
+Todas las rutas internas son relativas y la carpeta incluye `.nojekyll`.
 
-## Uso local
+## Secciones
 
-Puede abrirse `index.html` directamente. Para reproducir mejor el alojamiento público, también puede servirse con cualquier servidor estático.
+- Presentación
+- Historia
+- Personal
+- Inteligencia: organizaciones, personas y lugares de interés
+- Activos
+- Reclutamiento
+
+El antiguo Atlas y el Registro de operaciones han sido retirados. Los lugares se consultan desde Inteligencia y la historia conserva los acontecimientos relevantes.

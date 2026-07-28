@@ -1,48 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Naves, sedes, comunicaciones y servicios de la Compañía Harford."><title>Activos · Compañía Harford</title><link rel="icon" href="assets/harford-emblem.png"><link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Naves, sedes, comunicaciones y servicios de la Compañía Harford." name="description"/><title>Activos · Compañía Harford</title><link href="assets/harford-emblem.png" rel="icon"/><link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body data-page="activos">
-<header class="site-header"><nav class="navbar container" aria-label="Navegación principal"><a class="brand" href="index.html"><img src="assets/harford-emblem.png" alt=""><span><strong>Compañía Harford</strong><small>Archivo del estandarte azul</small></span></a><button class="nav-toggle" aria-label="Abrir menú">Menú</button><div class="nav-links"><a data-page="inicio" href="index.html">Presentación</a><a data-page="historia" href="historia.html">Historia</a><a data-page="personajes" href="personajes.html">Personal</a><a data-page="organizaciones" href="organizaciones.html">Inteligencia</a><a data-page="lugares" href="lugares.html">Lugares</a><a data-page="operaciones" href="operaciones.html">Operaciones</a><a data-page="activos" href="activos.html">Activos</a><a data-page="reclutamiento" href="reclutamiento.html">Reclutamiento</a></div></nav></header>
+<header class="site-header"><nav aria-label="Navegación principal" class="navbar container"><a class="brand" href="index.html"><img alt="" src="assets/harford-emblem.png"/><span><strong>Compañía Harford</strong><small>Archivo del estandarte azul</small></span></a><button aria-label="Abrir menú" class="nav-toggle">Menú</button><div class="nav-links"><a data-page="inicio" href="index.html">Presentación</a><a data-page="historia" href="historia.html">Historia</a><a data-page="personajes" href="personajes.html">Personal</a><a data-page="organizaciones" href="organizaciones.html">Inteligencia</a><a data-page="activos" href="activos.html">Activos</a><a data-page="reclutamiento" href="reclutamiento.html">Reclutamiento</a></div></nav></header>
 <main>
-  <section class="page-hero assets-hero"><div class="container"><div class="breadcrumb">Archivo / Inventario general</div><h1>Activos y recursos</h1><p>Relación de embarcaciones, sedes, servicios y medios de comunicación vinculados al estandarte azul. La inclusión de un bien en este registro no demuestra que haya sido adquirido legalmente.</p></div></section>
-
-  <section class="section container">
-    <div class="section-heading"><div class="kicker">Registro naval</div><h2>Flota conocida</h2><p>Harford siempre ha intentado disponer de barco propio. La historia demuestra que “disponer” y “mantener a flote” son conceptos administrativos diferentes.</p></div>
-    <div class="fleet-grid" data-fleet-grid></div>
-  </section>
-
-  <section class="section container split-section">
-    <div>
-      <div class="section-heading left"><div class="kicker">Sedes y refugios</div><h2>Lugares donde regresar</h2><p>Desde tabernas prestadas hasta instalaciones cuyo propietario prefiere no figurar por escrito.</p></div>
-      <div class="base-list" data-base-list></div>
-    </div>
-    <aside id="radio" class="radio-terminal" aria-label="Terminal de comunicaciones de ambientación">
-      <div class="radio-top"><span class="radio-led"></span><strong>RECEPTOR DE CAMPAÑA</strong><span>CH-7</span></div>
-      <div class="radio-screen">
-        <div class="radio-label">FRECUENCIA SEGURA</div>
-        <div class="frequency">███.██</div>
-        <div class="signal-bars"><i></i><i></i><i></i><i></i><i></i></div>
-        <p data-radio-message>Canal en espera. Identifíquese únicamente mediante clave autorizada.</p>
-      </div>
-      <div class="radio-controls">
-        <button data-radio-command="status">Estado</button>
-        <button data-radio-command="audaz">Enlace Audaz</button>
-        <button data-radio-command="contract">Solicitar contrato</button>
-        <button data-radio-command="silence">Silencio</button>
-      </div>
-      <div class="radio-warning">La transmisión no debe contener nombres propios, afiliaciones ni ubicaciones completas.</div>
-    </aside>
-  </section>
-
-  <section class="section container">
-    <div class="section-heading"><div class="kicker">Carta de servicios</div><h2>Trabajos aceptados</h2><p>Servicios registrados por la antigua compañía y adaptados después a las necesidades de la Harford actual.</p></div>
-    <div class="services-grid" data-services-grid></div>
-  </section>
-
-  <section class="section compact container"><div class="on-role-notice"><div class="stamp">Cláusula de saqueo</div><p>Salvo acuerdo escrito en contrario, la compañía conserva el derecho de reclamar equipo, materiales y bienes sin propietario operativo encontrados durante el cumplimiento del contrato.</p></div></section>
+<section class="page-hero assets-hero"><div class="container"><div class="breadcrumb">Archivo / Inventario general</div><h1>Activos y recursos</h1><p>Relación de embarcaciones, sedes, servicios y medios de comunicación vinculados al estandarte azul. La inclusión de un bien en este registro no demuestra que haya sido adquirido legalmente.</p></div></section>
+<section class="section container">
+<div class="section-heading"><div class="kicker">Registro naval</div><h2>Flota conocida</h2><p>Harford siempre ha intentado disponer de barco propio. La historia demuestra que “disponer” y “mantener a flote” son conceptos administrativos diferentes.</p></div>
+<div class="fleet-grid" data-fleet-grid=""></div>
+</section>
+<section class="section container split-section">
+<div>
+<div class="section-heading left"><div class="kicker">Sedes y refugios</div><h2>Lugares donde regresar</h2><p>Desde tabernas prestadas hasta instalaciones cuyo propietario prefiere no figurar por escrito.</p></div>
+<div class="base-list" data-base-list=""></div>
+</div>
+<aside aria-label="Terminal de comunicaciones de ambientación" class="radio-terminal" id="radio">
+<div class="radio-top"><span class="radio-led"></span><strong>RECEPTOR DE CAMPAÑA</strong><span>CH-7</span></div>
+<div class="radio-screen">
+<div class="radio-label">FRECUENCIA SEGURA</div>
+<div class="frequency">███.██</div>
+<div class="signal-bars"><i></i><i></i><i></i><i></i><i></i></div>
+<p data-radio-message="">Canal en espera. Identifíquese únicamente mediante clave autorizada.</p>
+</div>
+<div class="radio-controls">
+<button data-radio-command="status">Estado</button>
+<button data-radio-command="audaz">Enlace Audaz</button>
+<button data-radio-command="contract">Solicitar contrato</button>
+<button data-radio-command="silence">Silencio</button>
+</div>
+<div class="radio-warning">La transmisión no debe contener nombres propios, afiliaciones ni ubicaciones completas.</div>
+</aside>
+</section>
+<section class="section container">
+<div class="section-heading"><div class="kicker">Carta de servicios</div><h2>Trabajos aceptados</h2><p>Servicios registrados por la antigua compañía y adaptados después a las necesidades de la Harford actual.</p></div>
+<div class="services-grid" data-services-grid=""></div>
+</section>
+<section class="section compact container"><div class="on-role-notice"><div class="stamp">Cláusula de saqueo</div><p>Salvo acuerdo escrito en contrario, la compañía conserva el derecho de reclamar equipo, materiales y bienes sin propietario operativo encontrados durante el cumplimiento del contrato.</p></div></section>
 </main>
-<footer class="site-footer"><div class="footer-grid container"><div class="footer-brand"><img src="assets/harford-emblem.png" alt=""><span>Archivo de la Compañía Harford<br><small>Todo objeto no reclamado durante siete días pasa a considerarse parte del pago.</small></span></div><span>Archivo recompuesto y mantenido por Bunny</span></div></footer>
+<footer class="site-footer"><div class="footer-grid container"><div class="footer-brand"><img alt="" src="assets/harford-emblem.png"/><span>Archivo de la Compañía Harford<br/><small>Todo objeto no reclamado durante siete días pasa a considerarse parte del pago.</small></span></div><span class="archive-credit">Archivo recompuesto y mantenido por Bunny</span></div></footer>
 <script src="js/assets.js"></script><script src="js/app.js"></script>
 </body></html>

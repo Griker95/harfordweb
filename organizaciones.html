@@ -1,45 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Archivo de organizaciones conocidas por la Compañía Harford.">
-  <title>Archivo de inteligencia · Compañía Harford</title>
-  <link rel="icon" href="assets/harford-emblem.png"><link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Archivo de inteligencia de la Compañía Harford: organizaciones, personas y lugares de interés." name="description"/>
+<title>Archivo de inteligencia · Compañía Harford</title>
+<link href="assets/harford-emblem.png" rel="icon"/><link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body data-page="organizaciones">
-<header class="site-header"><nav class="navbar container" aria-label="Navegación principal">
-<a class="brand" href="index.html"><img src="assets/harford-emblem.png" alt=""><span><strong>Compañía Harford</strong><small>Archivo del estandarte azul</small></span></a>
-<button class="nav-toggle" aria-label="Abrir menú">Menú</button><div class="nav-links"><a data-page="inicio" href="index.html">Presentación</a><a data-page="historia" href="historia.html">Historia</a><a data-page="personajes" href="personajes.html">Personal</a><a data-page="organizaciones" href="organizaciones.html">Inteligencia</a><a data-page="lugares" href="lugares.html">Lugares</a><a data-page="operaciones" href="operaciones.html">Operaciones</a><a data-page="activos" href="activos.html">Activos</a><a data-page="reclutamiento" href="reclutamiento.html">Reclutamiento</a></div></nav></header>
+<header class="site-header"><nav aria-label="Navegación principal" class="navbar container">
+<a class="brand" href="index.html"><img alt="" src="assets/harford-emblem.png"/><span><strong>Compañía Harford</strong><small>Archivo del estandarte azul</small></span></a>
+<button aria-label="Abrir menú" class="nav-toggle">Menú</button><div class="nav-links"><a data-page="inicio" href="index.html">Presentación</a><a data-page="historia" href="historia.html">Historia</a><a data-page="personajes" href="personajes.html">Personal</a><a data-page="organizaciones" href="organizaciones.html">Inteligencia</a><a data-page="activos" href="activos.html">Activos</a><a data-page="reclutamiento" href="reclutamiento.html">Reclutamiento</a></div></nav></header>
 <main>
-  <section class="page-hero intelligence-hero"><div class="container">
-    <div class="breadcrumb">Archivo interno / Organizaciones conocidas</div>
-    <div class="archive-authorship"><span>Archivo recompuesto por</span><strong>Bunny</strong></div>
-    <h1>Archivo de inteligencia</h1>
-    <p>Organizaciones, órdenes, cárteles y bandas que han compartido una mesa, una ruta o un campo de batalla con Harford. La reputación indicada corresponde a la relación conocida por la compañía, no a la opinión que cada organización tiene de sí misma.</p>
-  </div></section>
-
-  <section class="status-strip"><div class="status-grid container" data-organization-stats></div></section>
-
-  <section class="section container">
-    <nav class="archive-section-nav" aria-label="Secciones de inteligencia"><a class="active" href="organizaciones.html">Organizaciones</a><a href="contactos.html">Personas de interés</a></nav>
-    <div class="archive-toolbar">
-      <div class="filter-group" role="group" aria-label="Filtrar organizaciones">
-        <button class="filter-btn active" data-org-filter="all">Todas</button>
-        <button class="filter-btn" data-org-filter="general">Principales</button>
-        <button class="filter-btn" data-org-filter="cartels">Cárteles</button>
-        <button class="filter-btn" data-org-filter="pantano">Pantano de las Penas</button>
-        <button class="filter-btn" data-org-filter="chapaleos">Chapaleos</button>
-        <button class="filter-btn" data-org-filter="hostile">Adversas</button>
-      </div>
-      <label class="archive-search"><span>Buscar en el archivo</span><input type="search" data-org-search placeholder="Nombre, región o actividad"></label>
-    </div>
-
-    <div class="section-heading left compact-heading"><div class="kicker">Organizaciones conocidas</div><h2>Registro por ámbitos y territorios</h2><p>Las entradas se agrupan según su naturaleza o la zona en la que Harford las ha encontrado. La ubicación de un expediente no implica obediencia entre las organizaciones incluidas.</p></div>
-    <div class="organization-groups" data-organization-grid></div>
-  </section>
-
-  <section class="section compact container"><div class="on-role-notice"><div class="stamp">Nota de Bunny</div><p>“Neutral” no significa seguro. Solo significa que todavía no hemos decidido quién debería disparar primero.</p></div></section>
+<section class="page-hero intelligence-hero"><div class="container">
+<div class="breadcrumb">Archivo interno / Inteligencia</div>
+<h1>Archivo de inteligencia</h1>
+<p>Organizaciones, individuos y localizaciones que han intervenido en la historia de Harford. Las relaciones indicadas reflejan la última información disponible y pueden cambiar sin previo aviso.</p>
+</div></section>
+<section class="status-strip"><div class="status-grid container" data-intelligence-stats=""></div></section>
+<section class="section container">
+<div aria-label="Tipo de expediente" class="intelligence-type-switch" role="group">
+<button class="intel-type-btn active" data-intel-type="all"><span>Archivo completo</span><small>Todos los registros</small></button>
+<button class="intel-type-btn" data-intel-type="organization"><span>Organizaciones</span><small>Órdenes, cárteles y bandas</small></button>
+<button class="intel-type-btn" data-intel-type="contact"><span>Personas de interés</span><small>Aliados, contactos y objetivos</small></button>
+<button class="intel-type-btn" data-intel-type="place"><span>Lugares de interés</span><small>Fortalezas, refugios y enclaves</small></button>
+</div>
+<div class="archive-toolbar intelligence-toolbar">
+<div aria-label="Filtrar el archivo" class="filter-group" role="group">
+<button class="filter-btn active" data-intel-filter="all">Todos</button>
+<button class="filter-btn" data-intel-filter="pantano">Pantano de las Penas</button>
+<button class="filter-btn" data-intel-filter="chapaleos">Chapaleos</button>
+<button class="filter-btn" data-intel-filter="carteles">Cárteles</button>
+<button class="filter-btn" data-intel-filter="favorable">Favorables</button>
+<button class="filter-btn" data-intel-filter="adverse">Adversos</button>
+</div>
+<label class="archive-search"><span>Buscar en el archivo</span><input data-intel-search="" placeholder="Nombre, región, afiliación o actividad" type="search"/></label>
+</div>
+<div class="section-heading left compact-heading"><div class="kicker">Registro cruzado</div><h2>Expedientes conocidos</h2><p>Los registros se ordenan por clase y territorio. Una relación neutral no implica seguridad y una relación amistosa no elimina la necesidad de mantener una salida libre.</p></div>
+<div class="intelligence-groups" data-intelligence-grid=""></div>
+</section>
 </main>
-<footer class="site-footer"><div class="footer-grid container"><div class="footer-brand"><img src="assets/harford-emblem.png" alt=""><span>Archivo de inteligencia de Harford<br><small>Los rumores no son pruebas, pero ayudan a saber dónde buscar cadáveres.</small></span></div><span>Archivo recompuesto y mantenido por Bunny</span></div></footer>
-<script src="js/organizations.js"></script><script src="js/app.js"></script>
+<footer class="site-footer"><div class="footer-grid container"><div class="footer-brand"><img alt="" src="assets/harford-emblem.png"/><span>Archivo de inteligencia de Harford<br/><small>Información válida hasta que alguien cambie de bando o de precio.</small></span></div><span class="archive-credit">Archivo recompuesto y mantenido por Bunny</span></div></footer>
+<script src="js/organizations.js"></script><script src="js/contacts.js"></script><script src="js/places.js"></script><script src="js/intelligence.js"></script><script src="js/app.js"></script>
 </body></html>
