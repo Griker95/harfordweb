@@ -22,3 +22,17 @@ Todas las rutas internas son relativas y la carpeta incluye `.nojekyll`.
 - Reclutamiento
 
 El antiguo Atlas y el Registro de operaciones han sido retirados. Los lugares se consultan desde Inteligencia y la historia conserva los acontecimientos relevantes.
+
+
+## Perfiles de personal
+
+La versión 11 incorpora la información disponible en los perfiles exportados de Total RP 3:
+
+- datos declarados;
+- rasgos y equipo observados;
+- trasfondo e historial;
+- hoja táctica;
+- características, armas, competencias, habilidades e idiomas;
+- anexos desplegables de raza, clase, especialización y magia.
+
+Los campos ausentes permanecen sin completar. Las discrepancias internas del perfil se señalan como pendientes de revisión.
