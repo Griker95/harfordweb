@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 236) rotate(90) scale(230)">
+      <stop stop-color="#12598E"/>
+      <stop offset="1" stop-color="#06233C"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="148" y1="90" x2="358" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFC"/>
+      <stop offset="0.45" stop-color="#AAB8C2"/>
+      <stop offset="1" stop-color="#526371"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#000" flood-opacity=".55"/>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="230" fill="#030A10"/>
+  <circle cx="256" cy="256" r="216" fill="url(#bg)" stroke="#173B58" stroke-width="5"/>
+  <circle cx="256" cy="256" r="192" stroke="#9DAEBA" stroke-opacity=".25" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <g transform="rotate(-45 256 256)">
+      <path d="M245 62L267 62L279 291L233 291L245 62Z" fill="url(#steel)" stroke="#E8EFF4" stroke-width="4"/>
+      <path d="M256 29L274 70H238L256 29Z" fill="#E9F0F4" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="203" y="286" width="106" height="23" rx="5" fill="#B8C5CE" stroke="#F6FAFC" stroke-width="4"/>
+      <rect x="244" y="306" width="24" height="112" rx="8" fill="#2C3943" stroke="#AAB7C0" stroke-width="4"/>
+      <path d="M237 420C237 407 245 398 256 398C267 398 275 407 275 420C275 440 256 461 256 461C256 461 237 440 237 420Z" fill="#BCC8D0" stroke="#F2F6F8" stroke-width="4"/>
+      <path d="M250 87H262V278H250V87Z" fill="#FFFFFF" fill-opacity=".25"/>
+    </g>
+    <g transform="rotate(45 256 256)">
+      <path d="M245 62L267 62L279 291L233 291L245 62Z" fill="url(#steel)" stroke="#E8EFF4" stroke-width="4"/>
+      <path d="M256 29L274 70H238L256 29Z" fill="#E9F0F4" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="203" y="286" width="106" height="23" rx="5" fill="#B8C5CE" stroke="#F6FAFC" stroke-width="4"/>
+      <rect x="244" y="306" width="24" height="112" rx="8" fill="#2C3943" stroke="#AAB7C0" stroke-width="4"/>
+      <path d="M237 420C237 407 245 398 256 398C267 398 275 407 275 420C275 440 256 461 256 461C256 461 237 440 237 420Z" fill="#BCC8D0" stroke="#F2F6F8" stroke-width="4"/>
+      <path d="M250 87H262V278H250V87Z" fill="#FFFFFF" fill-opacity=".25"/>
+    </g>
+  </g>
+  <circle cx="256" cy="256" r="216" stroke="#000" stroke-opacity=".55" stroke-width="8"/>
+</svg>
