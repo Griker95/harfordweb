@@ -325,6 +325,7 @@ h3 { font-size: 1.4rem; }
 .dossier-footer { color: #b5c1ca; }
 
 .dossier-layout { --record-accent: var(--harford-blue-light); grid-template-columns: 330px minmax(0, 1fr); }
+.dossier-layout.intelligence-detail { grid-template-columns: minmax(0, 1fr); }
 .profile-panel {
   padding: 18px;
   border-color: color-mix(in srgb, var(--record-accent) 42%, transparent);

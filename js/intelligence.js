@@ -93,6 +93,9 @@
 
   const detail = document.querySelector('[data-intelligence-detail]');
   if (detail && new URLSearchParams(location.search).get('tipo')) {
+    detail.classList.add('intelligence-detail');
+    const characterDossier = document.querySelector('[data-dossier]');
+    if (characterDossier) characterDossier.hidden = true;
     const params = new URLSearchParams(location.search);
     const requestedType = params.get('tipo');
     const id = params.get('id');
@@ -102,6 +105,20 @@
       return;
     }
     document.title = `${record.name} · Inteligencia Harford`;
+    const hero = document.querySelector('.page-hero');
+    const heroLabels = {
+      organization: 'Expediente de organización',
+      contact: 'Expediente de persona de interés',
+      place: 'Expediente de lugar de interés'
+    };
+    if (hero) {
+      const breadcrumb = hero.querySelector('.breadcrumb');
+      const heading = hero.querySelector('h1');
+      const summary = hero.querySelector('p');
+      if (breadcrumb) breadcrumb.innerHTML = '<a href="intelligence.html">Archivo de inteligencia</a> / Expediente individual';
+      if (heading) heading.textContent = heroLabels[record.kind] || 'Expediente de inteligencia';
+      if (summary) summary.textContent = 'Resumen interno de la información confirmada, las relaciones conocidas y los riesgos registrados.';
+    }
     const sideFacts = record.kind === 'organization'
       ? [['Tipo',record.type],['Región conocida',record.region],['Estado',record.status],['Relación con Harford',record.relation]]
       : record.kind === 'contact'
