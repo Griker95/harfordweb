@@ -24,7 +24,10 @@
   };
 
   const iconFor = record => record.icon || 'assets/harford-emblem.png';
-  const hrefFor = record => `expediente.html?tipo=${encodeURIComponent(record.kind)}&id=${encodeURIComponent(record.id)}`;
+  const hrefFor = record => {
+    const page = record.kind === 'organization' ? 'organizacion.html' : 'expediente.html';
+    return `${page}?tipo=${encodeURIComponent(record.kind)}&id=${encodeURIComponent(record.id)}`;
+  };
 
   const grid = document.querySelector('[data-intelligence-grid]');
   if (grid) {
