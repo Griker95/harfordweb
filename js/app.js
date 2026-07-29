@@ -109,8 +109,10 @@
   }
 
   const page = document.body.dataset.page;
+  const dossierType = new URLSearchParams(location.search).get('tipo');
+  const activePage = page === 'expediente' ? (dossierType ? 'inteligencia' : 'personajes') : page;
   document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.dataset.page === page) link.setAttribute('aria-current', 'page');
+    if (link.dataset.page === activePage) link.setAttribute('aria-current', 'page');
   });
 
   const grid = document.querySelector('[data-character-grid]');
@@ -155,7 +157,7 @@
   }
 
   const dossierRoot = document.querySelector('[data-dossier]');
-  if (dossierRoot && typeof HARFORD_CHARACTERS !== 'undefined') {
+  if (dossierRoot && typeof HARFORD_CHARACTERS !== 'undefined' && !dossierType) {
     const params = new URLSearchParams(location.search);
     const id = params.get('id') || 'griker-vaughn';
     const record = HARFORD_CHARACTERS.find(c => c.id === id);

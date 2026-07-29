@@ -89,7 +89,7 @@
   }
 
   const detail = document.querySelector('[data-intelligence-detail]');
-  if (detail) {
+  if (detail && new URLSearchParams(location.search).get('tipo')) {
     const params = new URLSearchParams(location.search);
     const requestedType = params.get('tipo');
     const id = params.get('id');
