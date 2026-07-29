@@ -1,5 +1,11 @@
 # Archivo de la Compañía Harford
 
+## Trabajo desde móvil
+
+El repositorio está disponible en https://github.com/Griker95/harfordweb y la web publicada en https://griker95.github.io/harfordweb/.
+
+Consulta [GUIA-MOVIL.md](GUIA-MOVIL.md) para editar contenido desde GitHub y continuar el trabajo con Codex sin usar este ordenador.
+
 Sitio estático preparado para GitHub Pages. No requiere base de datos ni compilación.
 
 ## Publicación provisional en GitHub Pages
