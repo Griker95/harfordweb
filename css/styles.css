@@ -898,6 +898,10 @@ h3 { font-size: 1.4rem; }
   border-right:1px solid var(--line);
   background:rgba(0,0,0,.13);
 }
+.archive-profile-side .data-row {
+  grid-template-columns:1fr;
+  gap:5px;
+}
 .archive-profile-mark {
   display:flex;
   gap:17px;
