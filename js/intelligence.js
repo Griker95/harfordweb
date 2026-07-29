@@ -24,7 +24,7 @@
   };
 
   const iconFor = record => record.icon || 'assets/harford-emblem.png';
-  const hrefFor = record => `organizacion.html?tipo=${encodeURIComponent(record.kind)}&id=${encodeURIComponent(record.id)}`;
+  const hrefFor = record => `expediente.html?tipo=${encodeURIComponent(record.kind)}&id=${encodeURIComponent(record.id)}`;
 
   const grid = document.querySelector('[data-intelligence-grid]');
   if (grid) {
@@ -112,7 +112,7 @@
     const listTitle = record.kind === 'place' ? 'Relaciones registradas' : 'Información conocida';
     const list = record.kind === 'place' ? (record.related || []) : (record.known || []);
     detail.innerHTML = `<article class="archive-profile">
-      <aside class="archive-profile-side"><div class="archive-profile-mark"><img class="archive-profile-icon" src="${iconFor(record)}" alt=""><div><h1>${record.name}</h1><div class="profile-subtitle">${record.categoryLabel || record.kindLabel}</div></div></div><span class="reputation-badge ${record.displayClass || 'neutral'}">${record.displayRelation || 'Sin registrar'}</span><div class="data-list">${sideFacts.map(([label,value]) => `<div class="data-row"><span>${label}</span><strong>${value || 'No consta'}</strong></div>`).join('')}</div><a class="back-link" href="organizaciones.html">← Volver a Inteligencia</a></aside>
+      <aside class="archive-profile-side"><div class="archive-profile-mark"><img class="archive-profile-icon" src="${iconFor(record)}" alt=""><div><h1>${record.name}</h1><div class="profile-subtitle">${record.categoryLabel || record.kindLabel}</div></div></div><span class="reputation-badge ${record.displayClass || 'neutral'}">${record.displayRelation || 'Sin registrar'}</span><div class="data-list">${sideFacts.map(([label,value]) => `<div class="data-row"><span>${label}</span><strong>${value || 'No consta'}</strong></div>`).join('')}</div><a class="back-link" href="intelligence.html">← Volver a Inteligencia</a></aside>
       <div class="archive-profile-main"><div class="archive-zone-line">${record.groupTitle || record.region || record.kindLabel}</div><div class="kicker">Resumen del expediente</div><h2>${record.name}</h2>${(record.description || []).map(p => `<p class="lead">${p}</p>`).join('')}<div class="archive-facts">${facts.map(([label,value]) => `<div class="archive-fact"><span>${label}</span><strong>${value || 'No consta'}</strong></div>`).join('')}</div><div class="kicker">${listTitle}</div><ul class="archive-list">${list.map(item => `<li>${item}</li>`).join('')}</ul>${record.note ? `<div class="archive-note"><span>Anotación del archivo</span><p>“${record.note}”</p></div>` : ''}</div>
     </article>`;
   }
