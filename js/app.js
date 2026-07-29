@@ -24,6 +24,84 @@
   const renderSimpleList = (items) => Array.isArray(items) && items.length
     ? `<ul>${items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`
     : '<p class="muted-record">No consta en el registro.</p>';
+
+
+  const WOWHEAD_ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/large/';
+  const WOWHEAD_FALLBACK_ICON = `${WOWHEAD_ICON_BASE}inv_misc_questionmark.jpg`;
+
+  const normalizeWowheadIcon = (icon) => {
+    const clean = String(icon || 'inv_misc_questionmark')
+      .replace(/^.*[\\/]/, '')
+      .replace(/\.blp$/i, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9_-]/g, '');
+    return clean || 'inv_misc_questionmark';
+  };
+
+  const renderWowheadIcon = (icon, size = 28, className = 'trp-inline-icon') => {
+    const safeIcon = normalizeWowheadIcon(icon);
+    const safeSize = Math.max(16, Math.min(Number(size) || 28, 52));
+    return `<img class="${escapeHTML(className)}" src="${WOWHEAD_ICON_BASE}${safeIcon}.jpg" width="${safeSize}" height="${safeSize}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${WOWHEAD_FALLBACK_ICON}'">`;
+  };
+
+  const renderTRPMarkup = (rawValue) => {
+    const raw = String(rawValue || '');
+    const tokenPattern = /\{link\*([^*}]+)\*([^}]+)\}|\{icon:([^}:]+)(?::(\d+))?\}|\{(\/)?(h[1-3]|col)(?::([^}]+))?\}/gi;
+    let output = '';
+    let cursor = 0;
+    let match;
+
+    const appendText = (text) => {
+      output += escapeHTML(text).replace(/\n/g, '<br>');
+    };
+
+    while ((match = tokenPattern.exec(raw)) !== null) {
+      appendText(raw.slice(cursor, match.index));
+      cursor = tokenPattern.lastIndex;
+
+      if (match[1] !== undefined) {
+        const href = String(match[1]).trim();
+        const label = String(match[2]).trim();
+        if (/^https?:\/\//i.test(href)) {
+          output += `<a class="trp-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)}</a>`;
+        } else {
+          output += escapeHTML(label);
+        }
+        continue;
+      }
+
+      if (match[3] !== undefined) {
+        output += renderWowheadIcon(match[3], match[4] || 25);
+        continue;
+      }
+
+      const closing = Boolean(match[5]);
+      const tag = String(match[6] || '').toLowerCase();
+      const argument = String(match[7] || '').trim();
+
+      if (tag === 'col') {
+        if (closing) {
+          output += '</span>';
+        } else {
+          const hex = argument.replace(/^#/, '');
+          output += /^[0-9a-f]{6}$/i.test(hex)
+            ? `<span class="trp-color" style="color:#${hex}">`
+            : '<span class="trp-color">';
+        }
+        continue;
+      }
+
+      const level = Number(tag.slice(1));
+      if (closing) {
+        output += `</h${level}>`;
+      } else {
+        output += `<h${level} class="trp-heading trp-h${level}${argument.toLowerCase() === 'c' ? ' is-centered' : ''}">`;
+      }
+    }
+
+    appendText(raw.slice(cursor));
+    return output;
+  };
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav-links');
   if (toggle && nav) {
@@ -165,8 +243,10 @@
         <div class="public-note-grid">
           ${profileData.publicNotes.map(item => `
             <article class="${item.active ? 'is-active' : ''}">
-              <span>${item.active ? 'Vigente' : 'Archivado'}</span>
-              <h3>${escapeHTML(item.title)}</h3>
+              <div class="public-note-title">
+                ${item.icon ? renderWowheadIcon(item.icon, 34, 'public-note-wow-icon') : ''}
+                <div><span>${item.active ? 'Vigente' : 'Archivado'}</span><h3>${escapeHTML(item.title)}</h3></div>
+              </div>
               ${formatArchiveText(item.text)}
             </article>
           `).join('')}
@@ -221,6 +301,25 @@
       'Rasgos, especialización y magia',
       'Anexos de campo'
     );
+
+
+    const rawTrpSections = Array.isArray(profileData.rawTrpSections) && profileData.rawTrpSections.length ? `
+      <section class="dossier-section trp-profile-archive">
+        <div class="kicker">Transcripción del perfil</div>
+        <h2>Archivo personal y táctico</h2>
+        <p class="trp-archive-intro">La estructura, los colores, los encabezados y los símbolos de la ficha original se conservan en esta copia.</p>
+        <div class="trp-section-list">
+          ${profileData.rawTrpSections.map((item, index) => `
+            <details class="trp-section" ${index === 0 ? 'open' : ''}>
+              <summary>
+                ${renderWowheadIcon(item.icon, 36, 'trp-section-summary-icon')}
+                <span>${escapeHTML(item.title)}</span>
+              </summary>
+              <div class="trp-rendered-content">${renderTRPMarkup(item.markup)}</div>
+            </details>
+          `).join('')}
+        </div>
+      </section>` : '';
 
     const combat = profileData.combatSheet;
     const combatSheetSection = combat ? `
@@ -326,12 +425,10 @@
         ${isOperational ? `<div class="operational-top-grid">${roleSection}${contributionSection}</div>${traitsSection}${relationsSection}${profileSummary}` : ''}
         ${publicNotesSection}
         ${personalityAxesSection}
-        ${backgroundSections}
-        ${narrativeSections}
         ${biography}
         ${skills}
         ${combatSheetSection}
-        ${mechanicsSections}
+        ${rawTrpSections}
         ${operations}
         <section class="dossier-section archivist-note"><div class="stamp">Observación de archivo</div><p>${record.notes}</p></section>
       </div>`;

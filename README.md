@@ -36,3 +36,8 @@ La versión 11 incorpora la información disponible en los perfiles exportados d
 - anexos desplegables de raza, clase, especialización y magia.
 
 Los campos ausentes permanecen sin completar. Las discrepancias internas del perfil se señalan como pendientes de revisión.
+
+
+## Formato TRP3 e iconos
+
+Los anexos personales conservan las etiquetas de jerarquía visual `{h1}`, `{h2}` y `{h3}`, los colores `{col:...}` y los iconos declarados mediante `{icon:...}`. Los iconos se cargan desde el CDN de Wowhead; si un icono personalizado de Epsilon no existe allí, se muestra el icono de interrogación de Wowhead como sustituto.

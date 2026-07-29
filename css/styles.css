@@ -1523,3 +1523,105 @@ h3 { font-size: 1.4rem; }
     margin-top: .75rem;
   }
 }
+
+
+/* Conservación visual de los perfiles Total RP 3 */
+.public-note-title {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .55rem;
+}
+.public-note-title h3,
+.public-note-title span { margin: 0; }
+.public-note-wow-icon,
+.trp-section-summary-icon,
+.trp-inline-icon {
+  flex: 0 0 auto;
+  object-fit: cover;
+  border: 1px solid rgba(164, 196, 220, .35);
+  border-radius: 3px;
+  background: #071321;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .45), inset 0 0 8px rgba(255,255,255,.08);
+}
+.trp-inline-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .28rem .14rem 0;
+}
+.trp-archive-intro {
+  color: var(--muted);
+  margin: .3rem 0 1rem;
+}
+.trp-section-list {
+  display: grid;
+  gap: .8rem;
+}
+.trp-section {
+  border: 1px solid rgba(113, 161, 198, .22);
+  background: rgba(4, 14, 25, .55);
+}
+.trp-section > summary {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  padding: .78rem 1rem;
+  color: var(--paper);
+  font-weight: 750;
+  letter-spacing: .02em;
+  list-style: none;
+}
+.trp-section > summary::-webkit-details-marker { display: none; }
+.trp-section > summary::after {
+  content: '+';
+  margin-left: auto;
+  color: var(--record-accent, var(--blue-light));
+  font-size: 1.15rem;
+}
+.trp-section[open] > summary::after { content: '−'; }
+.trp-section[open] > summary {
+  border-bottom: 1px solid rgba(113, 161, 198, .2);
+  background: rgba(34, 79, 114, .14);
+}
+.trp-rendered-content {
+  padding: 1.05rem 1.2rem 1.25rem;
+  color: var(--text);
+  line-height: 1.68;
+  overflow-wrap: anywhere;
+}
+.trp-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--paper);
+  line-height: 1.2;
+}
+.trp-h1 {
+  margin: .25rem 0 1rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid rgba(113, 161, 198, .3);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  letter-spacing: .045em;
+}
+.trp-h2 {
+  margin: 1.35rem 0 .55rem;
+  font-size: 1.25rem;
+}
+.trp-h3 {
+  margin: 1rem 0 .35rem;
+  font-size: 1rem;
+}
+.trp-heading.is-centered { text-align: center; }
+.trp-color { font-weight: inherit; }
+.trp-link {
+  color: #67b9f1;
+  text-decoration: underline;
+  text-decoration-color: rgba(103,185,241,.45);
+  text-underline-offset: 3px;
+}
+.trp-link:hover { color: #a9dbfb; }
+
+@media (max-width: 580px) {
+  .trp-rendered-content { padding: .9rem; }
+  .trp-section > summary { padding: .7rem .8rem; }
+  .trp-h1 { font-size: 1.45rem; }
+}
